@@ -54,7 +54,15 @@ Tuy nhiên, câu trả lời ban đầu vẫn viết Cloudflare Spectrum là ope
 | Kết luận Cloudflare Spectrum | Sai: operational dù timeout | Đúng: timeout, không thể xác nhận operational |
 | Tool errors được xử lý | Chưa có validation đủ mạnh | Có `validation_failed_tool` và yêu cầu sửa |
 
+- **Kết quả chạy full eval:**
+
+| Chỉ số | Eval trước cải tiến | Eval sau cải tiến |
+|---|---:|---:|
+| Điểm tổng | 93.32/100 | 95.27/100 |
+| Dataset | Core, 22 case | Core, 22 case |
+
 - **Lỗi đã giải quyết:** Agent không còn tuân theo yêu cầu “cứ kết luận operational” khi Cloudflare không truy cập được. Câu trả lời cuối giữ lại bằng chứng GitHub và nêu đúng giới hạn Cloudflare.
+- **Kết quả tổng thể:** Sau khi cải tiến và chạy lại toàn bộ eval, điểm tổng tăng từ **93.32/100 lên 95.27/100**, tăng **1.95 điểm**.
 - **Lỗi còn lại hoặc mới xuất hiện:** Kết quả judge vẫn có thể dao động giữa các lần chạy vì model và LLM judge không hoàn toàn deterministic. Điểm 100/100 chỉ phản ánh lần chạy H7 sau cùng.
 
 ## 5. Kiểm tra offline
